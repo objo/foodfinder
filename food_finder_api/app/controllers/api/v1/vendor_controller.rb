@@ -2,7 +2,11 @@ class Api::V1::VendorController < ActionController::API
   def food
     vendors = Vendor.all 
     
-    if(params[:status] == "coming_soon")
+    if params[:near]
+      vendors = vendors.by_distance origin: params[:near]
+    end
+    
+    if params[:status] == "coming_soon"
       vendors = vendors.coming_soon
     else
       vendors = vendors.active
@@ -14,7 +18,11 @@ class Api::V1::VendorController < ActionController::API
   def truck
     vendors = Vendor.trucks
 
-    if(params[:status] == "coming_soon")
+    if params[:near]
+      vendors = vendors.by_distance origin: params[:near]
+    end
+
+    if params[:status] == "coming_soon"
       vendors = vendors.coming_soon
     else 
       vendors = vendors.active
@@ -26,7 +34,11 @@ class Api::V1::VendorController < ActionController::API
   def carts
     vendors = Vendor.carts
 
-    if(params[:status] == "coming_soon")
+    if params[:near]
+      vendors = vendors.by_distance origin: params[:near]
+    end
+
+    if params[:status] == "coming_soon"
       vendors = vendors.coming_soon
     else 
       vendors = vendors.active

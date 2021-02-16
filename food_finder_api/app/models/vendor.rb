@@ -12,6 +12,10 @@ class Vendor < ApplicationRecord
   scope :trucks, -> { where("facility_type = ?", TRUCK) }
   scope :carts, -> { where("facility_type = ?", CART) }
 
+  def self.foo(arg)
+    puts "It didn't work #{arg}"
+  end
+
   def self.from_csv(row)
     create do |vendor|
       vendor.name = row["Applicant"]

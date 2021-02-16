@@ -57,6 +57,7 @@ RSpec.describe "Vendors", type: :request do
       end
     end
   end
+
   describe "Trucks" do 
     describe "/api/v1/trucks" do 
       let!(:truck) { create(:vendor, facility_type: Vendor::TRUCK, )}
@@ -174,6 +175,40 @@ RSpec.describe "Vendors", type: :request do
         expect(vendors.size).to eq(1)
         expect(vendors[0]["facility_type"]).to eq(push_cart_coming_soon.facility_type)
       end
+    end
+  end
+
+  describe "Near" do 
+    let(:address) { Faker::Address.full_address }
+    
+    it "looks for all vendors near given location" do
+      vendors = double("vendors")
+      expect(Vendor).to receive(:all) { vendors }
+
+      expect(vendors).to receive(:by_distance).with(origin: address) { vendors }
+      expect(vendors).to receive(:active) { vendors }
+
+      get "/api/v1/food?near=#{address}"
+    end
+
+    it "looks for trucks near given location" do
+      vendors = double("vendors")
+      expect(Vendor).to receive(:trucks) { vendors }
+
+      expect(vendors).to receive(:by_distance).with(origin: address) { vendors }
+      expect(vendors).to receive(:active) { vendors }
+
+      get "/api/v1/truck?near=#{address}"
+    end
+
+    it "looks for carts near given location" do
+      vendors = double("vendors")
+      expect(Vendor).to receive(:carts) { vendors }
+
+      expect(vendors).to receive(:by_distance).with(origin: address) { vendors }
+      expect(vendors).to receive(:active) { vendors }
+
+      get "/api/v1/carts?near=#{address}"
     end
   end
 end
