@@ -1,12 +1,14 @@
 class Vendor < ApplicationRecord
 
-  PENDING = "REQUESTED"
+  COMING_SOON = "REQUESTED"
   ACTIVE = "APPROVED"
   TRUCK = "Truck"
+  CART = "Push Cart"
 
-  scope :active, -> { where("permit_status = ?", ACTIVE)}
-  scope :coming_soon, -> { where("permit_status = ?", PENDING) }
+  scope :active, -> { where("permit_status = ?", ACTIVE) }
+  scope :coming_soon, -> { where("permit_status = ?", COMING_SOON) }
   scope :trucks, -> { where("facility_type = ?", TRUCK) }
+  scope :carts, -> { where("facility_type = ?", CART) }
 
   def self.from_csv(row)
     create do |vendor|
