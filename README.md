@@ -77,7 +77,17 @@ The following endpoints have been implemented.
 
 `$ docker-compose run api rake`
 
-## Todo
+### Frontend Todo
+
+- [ ] Create basic create-react-app
+- [ ] Containerize react app & add to docker-compose
+- [ ] Create Listing of all food trucks in a table
+- [ ] Create buttons that toggle table for carts and trucks
+- [ ] Create buttons to see food vendors coming soon
+- [ ] See listings close to a particular address
+- [ ] Add results to a map
+
+### API Todo
 
 - [x] Containerize the app
 - [x] Add rspec, factory_bot, faker, for testing
