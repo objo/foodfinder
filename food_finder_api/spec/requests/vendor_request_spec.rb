@@ -6,7 +6,6 @@ RSpec.describe "Vendors", type: :request do
 
     before(:each) do
       count.times { create(:vendor) }
-      
       get "/api/v1/food"      
     end
 
@@ -18,7 +17,7 @@ RSpec.describe "Vendors", type: :request do
       expect(response).to have_http_status(:success)
     end
 
-    it "returns all correct data" do
+    it "returns all vendors" do
       body = JSON.parse(response.body)
 
       expect(body).to have_key("results")
