@@ -18,9 +18,10 @@ class Vendor < ApplicationRecord
 
   def self.from_csv(row)
     create do |vendor|
+      vendor.location_id = row["locationid"].to_i
       vendor.name = row["Applicant"]
       vendor.facility_type = row["FacilityType"]
-      vendor.location_description = row["LocationDescripton"]
+      vendor.location_description = row["LocationDescription"]
       vendor.address = row["Address"]
       vendor.permit_status = row["Status"]
       vendor.food_description = row["FoodItems"]
