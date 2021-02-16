@@ -87,7 +87,7 @@ RSpec.describe "Vendors", type: :request do
       end
     end
 
-    describe "/api/v1/trucks/coming_soon" do 
+    describe "/api/v1/truck/coming_soon" do 
       let!(:truck) { create(:vendor, facility_type: Vendor::TRUCK, permit_status: Vendor::ACTIVE)}
       let!(:push_cart) { create(:vendor, facility_type: Vendor::CART, permit_status: Vendor::ACTIVE)}
       let!(:truck_coming_soon) { create(:vendor, facility_type: Vendor::TRUCK, permit_status: Vendor::COMING_SOON)}
