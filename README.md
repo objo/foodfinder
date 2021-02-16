@@ -73,6 +73,15 @@ The following endpoints have been implemented.
 
 `$ docker-compose up`
 
+#### Accessing the API's
+
+Once the docker containers are running, you can access them through the web
+
+| Service   | Address                     |
+| --------- | --------------------------- |
+| API       | http://localhost:3000/{uri} |
+| Front End | http://localhost            |
+
 #### Running Tests (specs)
 
 `$ docker-compose run api rake`
