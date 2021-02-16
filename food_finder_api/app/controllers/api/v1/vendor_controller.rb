@@ -8,4 +8,10 @@ class Api::V1::VendorController < ActionController::API
 
     render json: { results: vendors }.to_json, status: :ok
   end
+
+  def truck
+    vendors = Vendor.trucks
+
+    render json: { results: vendors }.to_json, status: :ok
+  end
 end
