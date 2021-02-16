@@ -7,3 +7,10 @@ services:
       - "3000:3000"
     volumes:
       - .:/ftf_api
+
+  client:
+    build: ./food_finder_client
+    ports:
+      - "80:80"
+    depends_on:
+      - api

@@ -46,14 +46,14 @@ All endpoints return an json object. Results are stored in the "results" attribu
 
 The following endpoints have been implemented.
 
-| Endpoint                     | Purpose                                         |
-| ---------------------------- | ----------------------------------------------- |
-| `/api/v1/food`               | Returns all food vendors with an active license |
-| `/api/v1/food/coming_soon`   | Returns all food vendors with a pending license |
-| `/api/v1/trucks`             | Returns all food trucks with an active license  |
-| `/api/v1/trucks/coming_soon` | Returns all food trucks with a pending license  |
-| `/api/v1/carts`              | Returns all push carts with an active license   |
-| `/api/v1/carts/coming_soon`  | Returns all push carts with a pending license   |
+| Endpoint                    | Purpose                                         |
+| --------------------------- | ----------------------------------------------- |
+| `/api/v1/food`              | Returns all food vendors with an active license |
+| `/api/v1/food/coming_soon`  | Returns all food vendors with a pending license |
+| `/api/v1/truck`             | Returns all food trucks with an active license  |
+| `/api/v1/truck/coming_soon` | Returns all food trucks with a pending license  |
+| `/api/v1/carts`             | Returns all push carts with an active license   |
+| `/api/v1/carts/coming_soon` | Returns all push carts with a pending license   |
 
 #### Tech Stack
 
