@@ -81,9 +81,10 @@ The following endpoints have been implemented.
 
 - [x] Create basic create-react-app
 - [x] Containerize react app & add to docker-compose
-- [ ] Create Listing of all food trucks in a table
+- [x] Create Listing of all food trucks in a table
 - [ ] Create buttons that toggle table for carts and trucks
 - [ ] Create buttons to see food vendors coming soon
+- [ ] Add Jest for testing components
 - [ ] See listings close to a particular address
 - [ ] Add results to a map
 
