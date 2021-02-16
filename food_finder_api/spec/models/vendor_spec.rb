@@ -6,7 +6,7 @@ RSpec.describe Vendor, type: :model do
     let!(:coming_soon) { create(:vendor, permit_status: "REQUESTED")}
     let!(:approved) { create(:vendor, permit_status: "APPROVED")}
 
-    describe "coming_soon"
+    describe "coming_soon" do
       it "scopes coming_soon to only vendors with requested permits" do
         vendors = Vendor.coming_soon
 
@@ -15,4 +15,5 @@ RSpec.describe Vendor, type: :model do
         expect(vendors).not_to match_array([approved])
       end
     end
+  end
 end
