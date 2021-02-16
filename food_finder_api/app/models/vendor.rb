@@ -1,5 +1,9 @@
 class Vendor < ApplicationRecord
-  
+
+  PENDING = "REQUESTED"
+
+  scope :coming_soon, -> { where("permit_status = ?", PENDING)}
+
   def self.from_csv(row)
     create do |vendor|
       vendor.name = row["Applicant"]
