@@ -1,8 +1,10 @@
 class Vendor < ApplicationRecord
 
   PENDING = "REQUESTED"
+  ACTIVE = "APPROVED"
   TRUCK = "Truck"
 
+  scope :active, -> { where("permit_status = ?", ACTIVE)}
   scope :coming_soon, -> { where("permit_status = ?", PENDING) }
   scope :trucks, -> { where("facility_type = ?", TRUCK) }
 
