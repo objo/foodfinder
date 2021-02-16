@@ -1,12 +1,22 @@
 import "./App.css";
 
+import Vendors from "./components/Vendors";
+
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h1>I'm here yall</h1>
-      </header>
-    </div>
+    <Container>
+      <Row className="top-row justify-content-md-center">
+        <h1>Food Vendors</h1>
+        <br />
+        <br />
+        <Container className="inner_body">
+          <Vendors />
+        </Container>
+      </Row>
+    </Container>
   );
 }
 
