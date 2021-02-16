@@ -4,10 +4,10 @@ FactoryBot.define do
   factory :vendor do
     location_id { Faker::Number.number(digits: 10) }
     name { Faker::Restaurant.name }
-    facility_type { ["Truck", "Push Cart"].sample }
+    facility_type { [Vendor::TRUCK, Vendor::CART].sample }
     location_description { Faker::Restaurant.type }
     address { Faker::Address.street_address + " San Francisco" }
-    permit_status { "APPROVED" }
+    permit_status { Vendor::ACTIVE }
     food_description {
       [
         "Burgers: melts: hot dogs: burritos:sandwiches: fries: onion rings: drinks",
