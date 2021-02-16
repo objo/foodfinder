@@ -34,11 +34,12 @@ This is an API to list all the food vendors (trucks and carts) near a particular
 - [x] Create scope for trucks
 - [x] Create API endpoint `/api/v1/trucks` returning all current trucks vendors
 - [x] Create API endpoint `/api/v1/trucks/coming_soon` returning all pending trucks vendors
-- [ ] Create scope for carts
-- [ ] Create API endpoint `/api/v1/carts` returning all current carts vendors
-- [ ] Create API endpoint `/api/v1/carts/coming_soon` returning all pending carts vendors
+- [x] Create scope for carts
+- [x] Create API endpoint `/api/v1/carts` returning all current carts vendors
+- [x] Create API endpoint `/api/v1/carts/coming_soon` returning all pending carts vendors
 - [ ] Add geokit gem
 - [ ] Create API endpoint `/api/v1/food/near/address`
+- [ ] Move Bing key into a env file
 - [ ] Create job to geocode new vendors not containing lat / long
 - [ ] Move app to postgres with new docker container
 - [ ] Add token authorization
