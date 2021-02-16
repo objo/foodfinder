@@ -6,7 +6,7 @@ RSpec.describe "Vendors", type: :request do
       let(:count) { 5 }
   
       before(:each) do
-        count.times { create(:vendor, permit_status: "APPROVED") }
+        count.times { create(:vendor, permit_status: Vendor::ACTIVE) }
         get "/api/v1/food"      
       end
   
@@ -30,8 +30,8 @@ RSpec.describe "Vendors", type: :request do
     end
   
     describe "/api/v1/food/coming_soon" do 
-      let!(:coming_soon) { create(:vendor, permit_status: "REQUESTED")}
-      let!(:approved) { create(:vendor, permit_status: "APPROVED")}
+      let!(:coming_soon) { create(:vendor, permit_status: Vendor::COMING_SOON)}
+      let!(:approved) { create(:vendor, permit_status: Vendor::ACTIVE)}
   
       before(:each) do
         get "/api/v1/food/coming_soon"      
@@ -59,8 +59,8 @@ RSpec.describe "Vendors", type: :request do
   end
   describe "Trucks" do 
     describe "/api/v1/trucks" do 
-      let!(:truck) { create(:vendor, facility_type: "Truck", )}
-      let!(:push_cart) { create(:vendor, facility_type: "Push Cart")}
+      let!(:truck) { create(:vendor, facility_type: Vendor::TRUCK, )}
+      let!(:push_cart) { create(:vendor, facility_type: Vendor::CART)}
 
       before(:each) do
         get "/api/v1/truck/"      
@@ -87,10 +87,10 @@ RSpec.describe "Vendors", type: :request do
     end
 
     describe "/api/v1/trucks/coming_soon" do 
-      let!(:truck) { create(:vendor, facility_type: "Truck", permit_status: "APPROVED")}
-      let!(:push_cart) { create(:vendor, facility_type: "Push Cart", permit_status: "APPROVED")}
-      let!(:truck_coming_soon) { create(:vendor, facility_type: "Truck", permit_status: "REQUESTED")}
-      let!(:push_cart_coming_soon) { create(:vendor, facility_type: "Push Cart", permit_status: "REQUESTED")}
+      let!(:truck) { create(:vendor, facility_type: Vendor::TRUCK, permit_status: Vendor::ACTIVE)}
+      let!(:push_cart) { create(:vendor, facility_type: Vendor::CART, permit_status: Vendor::ACTIVE)}
+      let!(:truck_coming_soon) { create(:vendor, facility_type: Vendor::TRUCK, permit_status: Vendor::COMING_SOON)}
+      let!(:push_cart_coming_soon) { create(:vendor, facility_type: Vendor::CART, permit_status: Vendor::COMING_SOON)}
 
       before(:each) do
         get "/api/v1/truck/"      
