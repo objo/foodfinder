@@ -79,8 +79,8 @@ The following endpoints have been implemented.
 
 ### Frontend Todo
 
-- [ ] Create basic create-react-app
-- [ ] Containerize react app & add to docker-compose
+- [x] Create basic create-react-app
+- [x] Containerize react app & add to docker-compose
 - [ ] Create Listing of all food trucks in a table
 - [ ] Create buttons that toggle table for carts and trucks
 - [ ] Create buttons to see food vendors coming soon
