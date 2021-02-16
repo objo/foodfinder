@@ -67,7 +67,13 @@ The following endpoints have been implemented.
 - Clone repository.
 - Navigate to the main folder
 
-  `$ docker-compose build`
+This will build the docker containers for the front and backend
+
+`$ docker-compose build`
+
+Then you need to create the database and seed it with the data (loading the data file into the database)
+
+`$ docker-compose run api rake db:migrate db:seed`
 
 #### Running the server
 
