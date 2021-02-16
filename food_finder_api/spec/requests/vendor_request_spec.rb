@@ -6,7 +6,7 @@ RSpec.describe "Vendors", type: :request do
       let(:count) { 5 }
   
       before(:each) do
-        count.times { create(:vendor) }
+        count.times { create(:vendor, permit_status: "APPROVED") }
         get "/api/v1/food"      
       end
   

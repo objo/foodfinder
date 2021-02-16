@@ -7,7 +7,7 @@ FactoryBot.define do
     facility_type { ["Truck", "Push Cart"].sample }
     location_description { Faker::Restaurant.type }
     address { Faker::Address.street_address + " San Francisco" }
-    permit_status { ["REQUESTED", "APPROVED"].sample }
+    permit_status { "APPROVED" }
     food_description {
       [
         "Burgers: melts: hot dogs: burritos:sandwiches: fries: onion rings: drinks",
