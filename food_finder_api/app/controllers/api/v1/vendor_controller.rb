@@ -3,7 +3,6 @@ class Api::V1::VendorController < ActionController::API
     vendors = Vendor.all 
     
     if(params[:status] == "coming_soon")
-      puts "coming soon"
       vendors = vendors.coming_soon
     end
 
