@@ -22,4 +22,16 @@ class Api::V1::VendorController < ActionController::API
 
     render json: { results: vendors }.to_json, status: :ok
   end
+
+  def carts
+    vendors = Vendor.carts
+
+    if(params[:status] == "coming_soon")
+      vendors = vendors.coming_soon
+    else 
+      vendors = vendors.active
+    end
+
+    render json: { results: vendors }.to_json, status: :ok
+  end
 end
