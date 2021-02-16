@@ -3,11 +3,25 @@ import React, { useState, useEffect } from "react";
 import Table from "react-bootstrap/Table";
 import { toast } from "react-toastify";
 import axios from "axios";
+import { Cart, Truck } from "react-bootstrap-icons";
+
+function VendorType({ type }) {
+  if (type === "Push Cart") {
+    return <Cart />;
+  } else if (type === "Truck") {
+    return <Truck />;
+  } else {
+    return "";
+  }
+}
 
 function VendorRow({ vendor }) {
   if (vendor) {
     return (
-      <tr key={vendor.id}>
+      <tr>
+        <td>
+          <VendorType type={vendor.facility_type} />
+        </td>
         <td>{vendor.name}</td>
         <td>{vendor.location_description}</td>
         <td>{vendor.address}</td>
@@ -25,14 +39,16 @@ function VendorRow({ vendor }) {
   }
 }
 
-function Vendors() {
+function Vendors({ vendorType }) {
   const [vendors, setVendors] = useState([]);
 
   useEffect(() => {
     console.log("Getting customer list");
     const fetchData = async () => {
       try {
-        const response = await axios.get("http://localhost:3000/api/v1/food");
+        const response = await axios.get(
+          "http://localhost:3000/api/v1/" + vendorType
+        );
         console.log("[DBG] response.data: ", response.data);
         setVendors(response.data.results);
       } catch (error) {
@@ -42,10 +58,10 @@ function Vendors() {
       }
     };
     fetchData();
-  }, []);
+  }, [vendorType]);
 
   return (
-    <Table hover>
+    <Table hover className="overflow-auto">
       <thead>
         <tr>
           <th>Name</th>
@@ -55,8 +71,8 @@ function Vendors() {
         </tr>
       </thead>
       <tbody>
-        {vendors.map((vendor) => {
-          return <VendorRow vendor={vendor} />;
+        {vendors.map((vendor, key) => {
+          return <VendorRow vendor={vendor} key={key} />;
         })}
       </tbody>
     </Table>
