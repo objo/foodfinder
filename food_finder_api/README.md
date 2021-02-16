@@ -31,9 +31,9 @@ This is an API to list all the food vendors (trucks and carts) near a particular
 - [x] Create API endpoint `/api/v1/food` returning all current food vendors
 - [x] Create scope for current and coming soon
 - [x] Create API endpoint `/api/v1/food/coming_soon` returning all pending food vendors
-- [ ] Create scope for trucks
-- [ ] Create API endpoint `/api/v1/trucks` returning all current trucks vendors
-- [ ] Create API endpoint `/api/v1/trucks/coming_soon` returning all pending trucks vendors
+- [x] Create scope for trucks
+- [x] Create API endpoint `/api/v1/trucks` returning all current trucks vendors
+- [x] Create API endpoint `/api/v1/trucks/coming_soon` returning all pending trucks vendors
 - [ ] Create scope for carts
 - [ ] Create API endpoint `/api/v1/carts` returning all current carts vendors
 - [ ] Create API endpoint `/api/v1/carts/coming_soon` returning all pending carts vendors
