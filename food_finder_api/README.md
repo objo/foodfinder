@@ -38,7 +38,7 @@ This is an API to list all the food vendors (trucks and carts) near a particular
 - [x] Create API endpoint `/api/v1/carts` returning all current carts vendors
 - [x] Create API endpoint `/api/v1/carts/coming_soon` returning all pending carts vendors
 - [x] Add geokit gem
-- [ ] Create API endpoint `/api/v1/food/near/address`
+- [x] Update endpoints to accept `?near="123 Main Street, Somewhere OH"`
 - [ ] Move Bing key into a env file
 - [ ] Create job to geocode new vendors not containing lat / long
 - [ ] Move app to postgres with new docker container
